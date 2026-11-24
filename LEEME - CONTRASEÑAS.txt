@@ -1,0 +1,34 @@
+CÓMO PONER LAS CONTRASEÑAS
+==========================
+
+Las contraseñas van en el archivo ".env" de esta carpeta (ábrelo con el Bloc de notas).
+Ese archivo NO se sube a GitHub, así que tus claves quedan solo en tu computadora.
+
+1) MONGODB_URI
+   - En MongoDB Atlas: Database Access -> Edit (en coopentaxilosjardines_db_user)
+     -> Edit Password -> Autogenerate Secure Password -> Copy -> Update User.
+   - En el archivo .env, en la línea MONGODB_URI, borra la palabra CONTRASEÑA
+     y pega la contraseña. Sin < > y sin espacios.
+
+2) ADMIN_PASSWORD
+   - Invéntala tú. Es la clave para entrar al Panel de la página.
+   - Larga (12 caracteres o más). Anótala en un lugar seguro.
+
+3) JWT_SECRET
+   - Escribe cualquier texto largo inventado (30 caracteres o más). No tienes que recordarlo.
+
+4) Guarda el archivo (Ctrl+G o Ctrl+S).
+
+
+PARA QUE FUNCIONE EN INTERNET (Render)
+--------------------------------------
+Render NO lee el archivo .env. Copia los mismos tres valores en:
+Render -> taxis-los-jardines -> Environment -> (lápiz) -> pegar -> "Save, rebuild, and deploy".
+
+
+PROBAR EN LA COMPUTADORA (opcional)
+-----------------------------------
+Necesitas Node.js instalado. En esta carpeta abre una terminal y escribe:
+    npm install
+    npm start
+Luego abre http://localhost:3000

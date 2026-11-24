@@ -8,6 +8,15 @@ const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const path = require("path");
 const { MongoClient } = require("mongodb");
+const fs = require("fs");
+
+// En la computadora, lee las contraseñas del archivo .env (en Render se ponen en "Environment").
+try {
+  for (const line of fs.readFileSync(path.join(__dirname, ".env"), "utf8").split(/\r?\n/)) {
+    const m = line.match(/^\s*([A-Z_][A-Z0-9_]*)\s*=\s*(.*)\s*$/);
+    if (m && !(m[1] in process.env) && !/^PON_AQUI|CONTRASEÑA/.test(m[2])) process.env[m[1]] = m[2].replace(/^["']|["']$/g, "");
+  }
+} catch {}
 
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI || "";
