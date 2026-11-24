@@ -1,0 +1,19 @@
+{
+  "name": "taxis-los-jardines",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Directorio de taxistas de la Cooperativa en Taxi Los Jardines (Quinindé) con estado en vivo.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.12.0"
+  }
+}
